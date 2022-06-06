@@ -37,7 +37,7 @@ int main(int argc, const char *argv[])
 
     currentSyscallNumber = syscallNumbers["NtClose"];
     auto NtClose = (_NtClose)&SyscallDispatcher;
-    NtClose(hFile);
+    status = NtClose(hFile);
     if (status != 0) {
         printf("Error status: 0x%X\n", status);
         return 1;
